@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function GridCards(props) {
 
     return (
-        <div className="GridCards container mb-3">
+        <div data-testid="gridContainer" className="GridCards container mb-3">
             <Row xs={1} lg={3} className="g-4">
                 {Array.from({ length: 3 }).map((_, idx) => (
                     <Col key={idx}>
