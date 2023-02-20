@@ -2,6 +2,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link, withRouter } from 'react-router-dom';
 import UserNav from './UserNav';
+import Logo from '../../images/CAPSTONE2.png'
 
 function Header(props) {
 
@@ -10,10 +11,11 @@ function Header(props) {
       <Navbar expand="lg" fixed="top">
 
         <Navbar.Brand as={Link} to="/"><img
-              src="src\images\CAPSTONE2.png"
+              src={Logo}
               width="30"
               height="30"
               className="d-inline-block align-top"
+              alt=""
             />Capstone Cookies</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
