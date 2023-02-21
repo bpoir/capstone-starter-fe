@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import NotFound from "./pages/notFound/NotFound";
 import Register from "./pages/register/Register";
 import UpdateUser from "./pages/updateUser/UpdateUser";
+import Products from "./pages/products/Products";
 
 function App() {
   return (
@@ -36,11 +37,17 @@ function App() {
           path="/protected"
           component={Protected}
         />
+        <Route 
+          exact
+          path="/products"
+          component={Products}
+        />
         <Route
           exact
           path="*"
           component={NotFound}
         />
+      
       </Switch>
     </div>
   );
