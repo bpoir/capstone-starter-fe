@@ -1,4 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
+import BluebCookie from '../../images/bluebcookie.png'
+import ChocChip from '../../images/chocchiplg.png'
+import RaspCake from '../../images/raspcakeslg.png'
 
 function Slideshow(props) {
 
@@ -8,7 +11,7 @@ function Slideshow(props) {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={BluebCookie}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -19,7 +22,7 @@ function Slideshow(props) {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={RaspCake}
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -30,7 +33,7 @@ function Slideshow(props) {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://via.placeholder.com/800x400"
+                        src={ChocChip}
                         alt="Third slide"
                     />
                     <Carousel.Caption>
