@@ -37,16 +37,17 @@ function App() {
           path="/protected"
           component={Protected}
         />
-        <Route
-          exact
-          path="*"
-          component={NotFound}
-        />
         <Route 
           exact
           path="/products"
           component={Products}
         />
+        <Route
+          exact
+          path="*"
+          component={NotFound}
+        />
+      
       </Switch>
     </div>
   );
