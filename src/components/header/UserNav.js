@@ -32,6 +32,7 @@ function UserNav(props) {
       </Navbar.Text>
       <Nav.Link as={Link} to="/login" href="/login">Sign in</Nav.Link>
       <Nav.Link as={Link} to="/register" href="/register">Register</Nav.Link>
+      <Nav.Link as={Link} to="/products" href="/products">Products</Nav.Link>
     </>
   )
   if (props.isAuthenticated) {
