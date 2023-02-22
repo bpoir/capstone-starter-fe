@@ -5,6 +5,7 @@ function AddUpdateDeleteUsers() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -23,7 +24,26 @@ function AddUpdateDeleteUsers() {
   };
 
   const handleAdd = () => {
-    
+    const data = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
+    fetch(process.env.REACT_APP_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        console.log(response);
+            setSuccessMessage('Product added succesfully.')
+      })
+      .catch((error)  =>{
+
+      });
   };
 
   const handleUpdate = () => {
