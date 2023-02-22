@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import mustBeAuthenticated from "../../redux/hoc/mustBeAuthenticated";
 import Header from "../../components/header/Header";
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import AddUpdateDeleteUsers from "../../components/addUpdateDeleteForm/addUpdateDeleteUsers";
 import AddUpdateDeleteProducts from "../../components/addUpdateDeleteForm/addUpdateDeleteProducts";
 
