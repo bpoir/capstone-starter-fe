@@ -65,7 +65,7 @@ class Products extends Component {
                     <h4> Products:</h4>
                     <ul> 
                         {this.state.products.map(product => (
-                            <li key={product.id}>{product.name}</li>
+                            <li key={product.id}>{product.productName}</li>
                         ))}
                     </ul>
             
