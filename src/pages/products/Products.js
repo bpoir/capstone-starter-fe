@@ -41,7 +41,7 @@ class Products extends Component {
             this.setState({ products });
 
         })
-        .catch(e => console.log(e.message)) //console.log any errors if the previous steps fail
+       
 
     }
 
