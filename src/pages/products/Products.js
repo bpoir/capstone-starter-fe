@@ -39,7 +39,7 @@ class Products extends Component {
         .then(products => {
             //programatically redirect to another route on success
             this.setState({ products });
-            console.log(products)
+
         })
         .catch(e => console.log(e.message)) //console.log any errors if the previous steps fail
 
@@ -66,7 +66,7 @@ class Products extends Component {
                     <h4> Products:</h4>
                     <ul> 
                         {this.state.products.map(product => (
-                            <li key={product.id}>{product.productName}</li>
+                            <li key={product.id}>{product.name}</li>
                         ))}
                     </ul>
             
