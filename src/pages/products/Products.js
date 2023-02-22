@@ -63,11 +63,25 @@ class Products extends Component {
             {this.state.products && (
                 <div className="container">
                     <h4> Products:</h4>
-                    <ul> 
+                    <table>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Type</th>
+                        </tr>
+                        
+                            <tr id="Product Name">       
                         {this.state.products.map(product => (
-                            <li key={product.id}>{product.productName}</li>
+                            <td key={product.id}>{product.productName}</td>
                         ))}
-                    </ul>
+                        </tr>
+                        <tr>
+                        {this.state.products.map(product => (
+                            <td key={product.id}>{product.productType}</td>
+                        ))}
+                        
+                        </tr>
+                        
+                    </table>
             
             </div>
         )}
