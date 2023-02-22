@@ -39,7 +39,6 @@ class Products extends Component {
         .then(products => {
             //programatically redirect to another route on success
             this.setState({ products });
-
         })
        
 
