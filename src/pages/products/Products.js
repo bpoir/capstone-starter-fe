@@ -3,7 +3,8 @@ import Alert from 'react-bootstrap/Alert';
 
 import Header from "../../components/header/Header";
 
-import UserForm from "../../components/userForm/UserForm";
+//import UserForm from "../../components/userForm/UserForm";
+import GetProducts from "../../components/products/GetProducts";
 
 class Products extends Component {
 
@@ -46,8 +47,8 @@ class Products extends Component {
         
         //use fetch to make a POST request with the Data from state that has been populated from
         //the data in the form
-        fetch(`${apiURL}/api/users`, {
-            method: "POST", //make sure whe set our method to POST when creating records
+        fetch(`${apiURL}/api/products`, {
+            method: "GET", //make sure whe set our method to POST when creating records
             headers: {
                 'content-type': 'application/json' //make sure we set the content-type headers so the API knows it is recieveing JSON data
             },
@@ -73,8 +74,8 @@ class Products extends Component {
                     {this.state.errorMessage && <Alert variant="danger">{this.state.errorMessage}</Alert>}
                 </div>
                 
-                <h3 className="text-center" >Create an Account</h3>
-                <UserForm
+                <h3 className="text-center" >Get Products</h3>
+                <GetProducts
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                     formData={this.state.formData}
