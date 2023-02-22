@@ -11,25 +11,16 @@ class Products extends Component {
     state = {
         errorMessage: null,
         formData: {
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: ""
+            productName: "",
+            productType: "",
+            productAllergens: "",
+            productPrice: ""
         }
     }
 
     //method that handles updating the data in state that matches the data in the form
     //runs everytime a form field changes
-    handleChange = (event) => {
-        //create a new object from form data in state
-        let formData = {...this.state.formData};
-
-        //take what is changed in the form and update the mathcing key in the form data object
-        formData[event.target.id] = event.target.value;
-
-        //update formData in state with the new object
-        this.setState({formData});
-    }
+    
 
     //run when the form is submitted
     handleSubmit = (event) => {
@@ -49,7 +40,7 @@ class Products extends Component {
             //programatically redirect to another route on success
             this.setState({ products });
         })
-        .catch(e => console.log(e.message)) //console.log any errors if the previous steps fail
+       
 
     }
 
