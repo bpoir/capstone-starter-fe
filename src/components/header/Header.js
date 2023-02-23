@@ -16,7 +16,7 @@ function Header(props) {
               height="30"
               className="d-inline-block align-top"
               alt=""
-            />Capstone Cookies</Navbar.Brand>
+            />  Capstone Cookies</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={props.location.pathname} className="ml-auto">

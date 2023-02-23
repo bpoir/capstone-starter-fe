@@ -5,7 +5,7 @@ import Header from "../../components/header/Header";
 
 //import UserForm from "../../components/userForm/UserForm";
 import GetProducts from "../../components/products/GetProducts";
-import CreateTable from '../../components/createTable/CreateTable';
+//import CreateTable from '../../components/createTable/CreateTable';
 
 class Products extends Component {
 
@@ -72,23 +72,38 @@ class Products extends Component {
 
                 {this.state.products && (
                     <div className="container">
-                        <h4> Products:</h4>
-                        <table>
-                            <tr>
-                                <th>Product Name</th>
-                                <th>Product Type</th>
-                            </tr>
-
-
+                        <div className="row">
+                            <div className="col">
+                                <h4>Product Name</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Product Type</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Allergens</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Price</h4>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
                             {this.state.products.map(product => (
-                                <td key={product.id}>{product.productName}</td>
-                            ))}
-
-
-
-
-                        </table>
-
+                                <div key={product.id}>{product.productName}</div>))}
+                            </div>
+                            <div className="col">
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productType}</div>))}
+                            </div>
+                            <div className="col">
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productAllergens}</div>))}
+                            </div>
+                            <div className="col">
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productPrice}</div>))}
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
@@ -97,3 +112,5 @@ class Products extends Component {
 }
 
 export default Products
+
+
