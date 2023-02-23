@@ -21,19 +21,19 @@ render() {
       <Header isAuthenticated={this.props.isAuthenticated} />
       <div className="container">
         <h2>Admin Page</h2>
-        <div class="row">
-          <div class="col ms-5">
+        <div className="row">
+          <div className="col ms-5">
             <button onClick={() => this.setState(prevState => ({showUserForm: !prevState.showUserForm}))}>Add/Manage Users</button>
           </div>
-          <div class="col">
+          <div className="col">
             <button onClick={() => this.setState(prevState => ({showProductForm: !prevState.showProductForm}))}>Add/Manage Products</button>
           </div>
         </div>
-        <div class="row">
-          <div class="col ms-5">
+        <div className="row">
+          <div className="col ms-5">
             {this.showUserForm()}
           </div>
-          <div class="col">
+          <div className="col">
             {this.showProductForm()}
           </div>
         </div>
