@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { ResponsiveEmbed } from 'react-bootstrap';
+//import { ResponsiveEmbed } from 'react-bootstrap';
 
 function AddUpdateDeleteProducts() {
   const [productName, setProductName] = useState('');
   const [productType, setType] = useState('');
   const [productAllergens, setAllergens] = useState('');
   const [productPrice, setPrice] = useState(0);
-  const [successMessage, setSuccessMessage] = useState('');
+  //const [successMessage, setSuccessMessage] = useState('');
 
   const handleNameChange = (event) => {
     setProductName(event.target.value);
@@ -40,7 +40,7 @@ function AddUpdateDeleteProducts() {
       })
         .then((response) => {
             console.log(response);
-            setSuccessMessage('Product added succesfully.');
+            //setSuccessMessage('Product added succesfully.');
           
         })
         .catch((error)  =>{

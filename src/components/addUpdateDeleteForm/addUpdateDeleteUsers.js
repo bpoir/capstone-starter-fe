@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
-import AuthService from "../../authService";
-import * as authActions from "../../redux/actions/auth";
+//import AuthService from "../../authService";
+//import * as authActions from "../../redux/actions/auth";
 import { generateAuthHeader } from "../../utils/authHelper";
 
 function AddUpdateDeleteUsers(props) {
@@ -67,7 +67,7 @@ function AddUpdateDeleteUsers(props) {
       password,
     };
     //get API url from the environment variables
-    const apiURL = process.env.REACT_APP_API_URL
+    //const apiURL = process.env.REACT_APP_API_URL
     
     fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
       method: 'PUT', 
