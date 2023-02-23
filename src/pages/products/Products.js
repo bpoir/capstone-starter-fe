@@ -72,23 +72,34 @@ class Products extends Component {
 
                 {this.state.products && (
                     <div className="container">
-                        <h4> Products:</h4>
-                        <table>
-                            <tr>
-                                <th>Product Name</th>
-                                <th>Product Type</th>
-                            </tr>
-
-
-                            {this.state.products.map(product => (
-                                <td key={product.id}>{product.productName}</td>
-                            ))}
-
-
-
-
-                        </table>
-
+                        <div className="row">
+                            <div className="col">
+                                <h4>Product Name</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Product Type</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Allergens</h4>
+                            </div>
+                            <div className="col">
+                                <h4>Price</h4>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                {/*call product type*/}
+                            </div>
+                            <div className="col">
+                                {/*call product type*/}
+                            </div>
+                            <div className="col">
+                                {/*call Allergens*/}
+                            </div>
+                            <div className="col">
+                                {/*call Price*/}
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
@@ -97,3 +108,5 @@ class Products extends Component {
 }
 
 export default Products
+
+
