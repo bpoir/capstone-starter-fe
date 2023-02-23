@@ -15,8 +15,8 @@ function Slideshow(props) {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Welcome to Capstone Cookies!</h3>
+                        <p>Blueberry Cookies</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -26,8 +26,8 @@ function Slideshow(props) {
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Welcome to Capstone Cookies!</h3>
+                        <p>Raspberry Cupcakes</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -37,8 +37,8 @@ function Slideshow(props) {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>Welcome to Capstone Cookies!</h3>
+                        <p>Chocolate Chip Cookies</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
