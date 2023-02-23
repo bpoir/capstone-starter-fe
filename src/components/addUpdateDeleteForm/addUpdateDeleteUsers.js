@@ -71,6 +71,7 @@ function AddUpdateDeleteUsers(props) {
     fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
       method: 'PUT', 
       headers: { 
+        'Authorization': `Bearer ${props.authtoken}` ,
         'Content-Type': 'application/json',},
         body: JSON.stringify(data),
       })
