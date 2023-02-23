@@ -1,0 +1,47 @@
+.user-form {
+    font-family: "Combo", sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.product-form {
+    font-family: "Combo", sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"]{
+    font-size:16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F0C0C0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0069d9;
+} 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './addUpdateDelete.css';
 //import { ResponsiveEmbed } from 'react-bootstrap';
 
 function AddUpdateDeleteProducts() {
@@ -97,6 +98,7 @@ function AddUpdateDeleteProducts() {
   }
     
   return (
+    <div className="product-form">
     <form>
       <label>
         Name:
@@ -128,6 +130,7 @@ function AddUpdateDeleteProducts() {
         Delete
       </button>
     </form>
+    </div>
   );
 }
 
