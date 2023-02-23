@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { connect } from "react-redux";
+import AuthService from "../../authService";
+import * as authActions from "../../redux/actions/auth";
+import { generateAuthHeader } from "../../utils/authHelper";
 
-function AddUpdateDeleteUsers() {
+function AddUpdateDeleteUsers(props) {
+
+  
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -35,7 +41,6 @@ function AddUpdateDeleteUsers() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
       },
       body: JSON.stringify(data),
     })
@@ -52,25 +57,40 @@ function AddUpdateDeleteUsers() {
       });
   };
 
-  const handleUpdate= (email) => {
+  const handleUpdate= () => {
 
+  
+
+    const data = {
+      firstName,
+      lastName,
+      password,
+    };
     //get API url from the environment variables
     const apiURL = process.env.REACT_APP_API_URL
-
-    //use fetch to make an API call and get a specific student (returns a promise)
-    fetch(`${apiURL}/api/users/${email}`, {
-        headers: {
-          'Authorization': 'Bearer ${accessToken}',
+    
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
+      method: 'PUT', 
+      headers: { 
+        
+        'Content-Type': 'application/json',
+        ...generateAuthHeader()
+      },
+        
+        body: JSON.stringify(data),
+      })
+      .then((response) => {
+        if(response.ok){
+          console.log('Successfully updated');
+        } else {
+          console.log('Unsuccessfully updated')
         }
-    })
-        //on success of the fetch request, turn the response that came back into JSON
-        .then((response) => response.json())
-        console.log('successfully updated')
-        //on success of turnig the response into JSON (data we can work with), lets add that data to state
-        .catch((error) => {
-          console.log(error)
-      });
-    };
+        })
+        .catch((error) =>{
+          console.log('Error updating user', error);
+        });
+
+};
 
   const handleDelete  = () => {
     const data = {
@@ -82,8 +102,7 @@ function AddUpdateDeleteUsers() {
     fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     })
@@ -102,7 +121,7 @@ function AddUpdateDeleteUsers() {
 
   return (
     <form>
-      <label>
+      <label> 
         First Name:
         <input type="text" value={firstName} onChange={handleFirstNameChange} />
       </label>
@@ -134,5 +153,12 @@ function AddUpdateDeleteUsers() {
     </form>
   );
 }
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
 
-export default AddUpdateDeleteUsers;
+export default connect(
+  mapStateToProps
+)(AddUpdateDeleteUsers);

@@ -56,11 +56,12 @@ function AddUpdateDeleteProducts() {
          productAllergens,
          productPrice,
        };
-      fetch('${process.env.REACT_APP_API_URL}/${productName}', {
-      metod: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+       fetch(`${process.env.REACT_APP_API_URL}/api/products/${productName}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(data),
     })
     .then((response) => {
       if(response.ok){
@@ -77,8 +78,8 @@ function AddUpdateDeleteProducts() {
  
 
   const handleDelete = () => {
-    fetch('${process.env.REACT_APP_API_URL}?productName=${productName}', {
-      metod: 'DELETE',
+    fetch(`${process.env.REACT_APP_API_URL}/api/products/${productName}`, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
