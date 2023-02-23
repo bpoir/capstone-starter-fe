@@ -68,22 +68,21 @@ function AddUpdateDeleteUsers(props) {
     //get API url from the environment variables
     const apiURL = process.env.REACT_APP_API_URL
     
-    fetch(`${apiURL}/api/users/${email}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
       method: 'PUT', 
       headers: { 
-        'Authorization': `Bearer ${props.autoken}` ,
         'Content-Type': 'application/json',},
         body: JSON.stringify(data),
       })
       .then((response) => {
         if(response.ok){
-          console.log('Successfully deleted');
+          console.log('Successfully updated');
         } else {
-          console.log('Unsuccessfully deleted')
+          console.log('Unsuccessfully updated')
         }
         })
         .catch((error) =>{
-          console.log('Error deleting user', error);
+          console.log('Error updating user', error);
         });
 
 };
