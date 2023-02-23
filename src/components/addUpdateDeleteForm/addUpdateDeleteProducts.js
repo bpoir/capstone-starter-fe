@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ResponsiveEmbed } from 'react-bootstrap';
 
 function AddUpdateDeleteProducts() {
   const [productName, setProductName] = useState('');
@@ -55,44 +56,44 @@ function AddUpdateDeleteProducts() {
          productAllergens,
          productPrice,
        };
-       fetch(process.env.REACT_APP_API_URL + '/api/products/{productName}',  {
-         method: 'PUT',
-         headers: {
-           'Content-Type': 'application/json',
-         },
-         body: JSON.stringify(data),
-       })
-         .then((response) => {
-           
-         })
-         .catch((error)  =>{
-   
-         });
+      fetch('${process.env.REACT_APP_API_URL}/${productName}', {
+      metod: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      if(response.ok){
+        console.log('Successfully updated');
+      } else {
+        console.log('Unsuccessfully updated')
+      }
+    })
+    .catch((error) => {
+      console.log('Error updating product', error);
+    });
      };
    
  
 
   const handleDelete = () => {
-    const data = {
-        productName,
-         productType,
-         productAllergens,
-         productPrice,
-       };
-       fetch(process.env.REACT_APP_API_URL + '/api/products/{productName}', {
-         method: 'Delete',
-         headers: {
-           'Content-Type': 'application/json',
-         },
-         body: JSON.stringify(data),
-       })
-         .then((response) => {
-           
-         })
-         .catch((error)  =>{
-   
-         });
-  };
+    fetch('${process.env.REACT_APP_API_URL}?productName=${productName}', {
+      metod: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then((response) => {
+      if(response.ok){
+        console.log('Successfully deleted');
+      } else {
+        console.log('Unsuccessfully deleted')
+      }
+    })
+    .catch((error) => {
+      console.log('Error deleting product', error);
+    });
+  }
     
   return (
     <form>
