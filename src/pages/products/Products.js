@@ -88,16 +88,20 @@ class Products extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-                                {/*call product type*/}
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productName}</div>))}
                             </div>
                             <div className="col">
-                                {/*call product type*/}
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productType}</div>))}
                             </div>
                             <div className="col">
-                                {/*call Allergens*/}
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productAllergens}</div>))}
                             </div>
                             <div className="col">
-                                {/*call Price*/}
+                            {this.state.products.map(product => (
+                                <div key={product.id}>{product.productPrice}</div>))}
                             </div>
                         </div>
                     </div>
