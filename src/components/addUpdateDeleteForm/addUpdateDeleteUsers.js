@@ -5,7 +5,7 @@ import * as authActions from "../../redux/actions/auth";
 
 function AddUpdateDeleteUsers(props) {
 
-  let client = new AuthService();
+  
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -40,7 +40,6 @@ function AddUpdateDeleteUsers(props) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
       },
       body: JSON.stringify(data),
     })
@@ -64,20 +63,19 @@ function AddUpdateDeleteUsers(props) {
     const data = {
       firstName,
       lastName,
-      email,
       password,
     };
     //get API url from the environment variables
     const apiURL = process.env.REACT_APP_API_URL
-    console.log(this.props.auth)
+    
     fetch(`${apiURL}/api/users/${email}`, {
       method: 'PUT', 
       headers: { 
-        // Authorization: `Bearer ${token}` ,
+        'Authorization': `Bearer ${props.autoken}` ,
         'Content-Type': 'application/json',},
         body: JSON.stringify(data),
       })
-      this.client(props.auth.token).then((response) => {
+      .then((response) => {
         if(response.ok){
           console.log('Successfully deleted');
         } else {
@@ -100,8 +98,7 @@ function AddUpdateDeleteUsers(props) {
     fetch(`${process.env.REACT_APP_API_URL}/api/users/${email}`, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${accessToken}',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data),
     })
