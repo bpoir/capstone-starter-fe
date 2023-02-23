@@ -29,8 +29,14 @@ render() {
             <button onClick={() => this.setState(prevState => ({showProductForm: !prevState.showProductForm}))}>Add/Manage Products</button>
           </div>
         </div>
-        {this.showUserForm()}
-        {this.showProductForm()}
+        <div class="row">
+          <div class="col ms-5">
+            {this.showUserForm()}
+          </div>
+          <div class="col">
+            {this.showProductForm()}
+          </div>
+        </div>
       </div>
     </div>
   );
