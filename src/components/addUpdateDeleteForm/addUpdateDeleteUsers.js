@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { connect } from "react-redux";
+import AuthService from "../../authService";
+import * as authActions from "../../redux/actions/auth";
 
-function AddUpdateDeleteUsers() {
+function AddUpdateDeleteUsers(props) {
+
+  let client = new AuthService();
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -52,25 +57,38 @@ function AddUpdateDeleteUsers() {
       });
   };
 
-  const handleUpdate= (email) => {
+  const handleUpdate= () => {
 
+  
+
+    const data = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
     //get API url from the environment variables
     const apiURL = process.env.REACT_APP_API_URL
-
-    //use fetch to make an API call and get a specific student (returns a promise)
+    console.log(this.props.auth)
     fetch(`${apiURL}/api/users/${email}`, {
-        headers: {
-          'Authorization': 'Bearer ${accessToken}',
+      method: 'PUT', 
+      headers: { 
+        // Authorization: `Bearer ${token}` ,
+        'Content-Type': 'application/json',},
+        body: JSON.stringify(data),
+      })
+      this.client(props.auth.token).then((response) => {
+        if(response.ok){
+          console.log('Successfully deleted');
+        } else {
+          console.log('Unsuccessfully deleted')
         }
-    })
-        //on success of the fetch request, turn the response that came back into JSON
-        .then((response) => response.json())
-        console.log('successfully updated')
-        //on success of turnig the response into JSON (data we can work with), lets add that data to state
-        .catch((error) => {
-          console.log(error)
-      });
-    };
+        })
+        .catch((error) =>{
+          console.log('Error deleting user', error);
+        });
+
+};
 
   const handleDelete  = () => {
     const data = {
@@ -102,7 +120,7 @@ function AddUpdateDeleteUsers() {
 
   return (
     <form>
-      <label>
+      <label> 
         First Name:
         <input type="text" value={firstName} onChange={handleFirstNameChange} />
       </label>
@@ -134,5 +152,12 @@ function AddUpdateDeleteUsers() {
     </form>
   );
 }
+function mapStateToProps(state) {
+  return {
+    auth: state.auth,
+  };
+}
 
-export default AddUpdateDeleteUsers;
+export default connect(
+  mapStateToProps
+)(AddUpdateDeleteUsers);
