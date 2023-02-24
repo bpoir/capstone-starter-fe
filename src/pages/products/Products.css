@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
 
-button {
-    background-color: #F0C0C0;
-    color: #1c000a;
-    font-family: 'Gloock', serif;
-}
-button:hover {
-    color: #F0C0C0;
-background-color: #1c000a;
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
 }

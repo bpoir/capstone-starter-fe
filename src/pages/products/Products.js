@@ -7,6 +7,7 @@ import Header from "../../components/header/Header";
 import GetProducts from "../../components/products/GetProducts";
 //import CreateTable from '../../components/createTable/CreateTable';
 import './Products.css';
+import Logo from '../../images/CAPSTONE2.png'
 
 class Products extends Component {
 
@@ -63,7 +64,16 @@ class Products extends Component {
                     {this.state.errorMessage && <Alert variant="danger">{this.state.errorMessage}</Alert>}
                 </div>
 
-                <h3 className="text-center" >Get Products</h3>
+                <h3 className="text-center" >Our Products</h3>
+                <img
+              src={Logo}
+              width="150"
+              height="150"
+              alt=""
+              style={{display: "block",
+                margin: "0 auto",
+                maxWidth: "100%",
+                height: "auto"}} />
                 <GetProducts
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}

@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gloock&family=PT+Serif:wght@700&display=swap');
 
 .user-form {
-    font-family: 'Gloock', serif;
+    font-family: 'PT Serif', serif;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 .product-form {
-    font-family: 'Gloock', serif;
+    font-family: 'PT Serif', serif;
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
