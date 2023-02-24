@@ -6,6 +6,7 @@ import Header from "../../components/header/Header";
 //import UserForm from "../../components/userForm/UserForm";
 import GetProducts from "../../components/products/GetProducts";
 //import CreateTable from '../../components/createTable/CreateTable';
+import './Products.css';
 
 class Products extends Component {
 
