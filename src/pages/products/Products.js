@@ -61,6 +61,7 @@ class Products extends Component {
                 <Header />
 
                 <div className="container">
+                    
                     {this.state.errorMessage && <Alert variant="danger">{this.state.errorMessage}</Alert>}
                 </div>
 
@@ -72,7 +73,6 @@ class Products extends Component {
               alt=""
               style={{display: "block",
                 margin: "0 auto",
-                maxWidth: "100%",
                 height: "auto"}} />
                 <GetProducts
                     handleChange={this.handleChange}
@@ -82,7 +82,7 @@ class Products extends Component {
                 
 
                 {this.state.products && (
-                    <div className="container">
+                    <div className="container border border-dark mt-5">
                         <div className="row">
                             <div className="col">
                                 <h4>Product Name</h4>
