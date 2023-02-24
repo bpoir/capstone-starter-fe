@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gloock&family=PT+Serif:wght@700&display=swap');
+
+button.btn-primary[type="submit"] {
+    background-color: #F0C0C0;
+    color: #1c000a;
+    font-family: 'PT Serif', serif;
+}
+
+button.btn-primary[type="submit"]:hover {
+    color: #F0C0C0;
+    background-color: #1c000a;
+}

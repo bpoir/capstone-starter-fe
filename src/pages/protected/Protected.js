@@ -3,6 +3,7 @@ import mustBeAuthenticated from "../../redux/hoc/mustBeAuthenticated";
 import Header from "../../components/header/Header";
 import AddUpdateDeleteUsers from "../../components/addUpdateDeleteForm/addUpdateDeleteUsers";
 import AddUpdateDeleteProducts from "../../components/addUpdateDeleteForm/addUpdateDeleteProducts";
+import './Protected.css';
 
 class Protected extends Component {
     state= {showUserForm: false, showProductForm: false}

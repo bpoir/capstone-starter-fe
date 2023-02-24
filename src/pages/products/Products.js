@@ -6,6 +6,8 @@ import Header from "../../components/header/Header";
 //import UserForm from "../../components/userForm/UserForm";
 import GetProducts from "../../components/products/GetProducts";
 //import CreateTable from '../../components/createTable/CreateTable';
+import './Products.css';
+import Logo from '../../images/CAPSTONE2.png'
 
 class Products extends Component {
 
@@ -59,10 +61,19 @@ class Products extends Component {
                 <Header />
 
                 <div className="container">
+                    
                     {this.state.errorMessage && <Alert variant="danger">{this.state.errorMessage}</Alert>}
                 </div>
 
-                <h3 className="text-center" >Get Products</h3>
+                <h3 className="text-center" >Our Products</h3>
+                <img
+              src={Logo}
+              width="150"
+              height="150"
+              alt=""
+              style={{display: "block",
+                margin: "0 auto",
+                height: "auto"}} />
                 <GetProducts
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
@@ -71,7 +82,7 @@ class Products extends Component {
                 
 
                 {this.state.products && (
-                    <div className="container">
+                    <div className="container border border-dark mt-5">
                         <div className="row">
                             <div className="col">
                                 <h4>Product Name</h4>

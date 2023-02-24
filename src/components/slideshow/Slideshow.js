@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import BluebCookie from '../../images/bluebcookie.png'
 import ChocChip from '../../images/chocchiplg.png'
 import RaspCake from '../../images/raspcakeslg.png'
-
+import './slideshow.css';
 function Slideshow(props) {
 
     return (

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Gloock&family=PT+Serif:wght@700&display=swap');
+
+.user-form {
+    font-family: 'PT Serif', serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.product-form {
+    font-family: 'PT Serif', serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+label {
+display: block;
+margin-bottom: 10px;
+margin-right: 10px;
+text-align: left;
+width: 100%;
+}
+
+label > input[type="text"],
+label > input[type="number"] {
+display: block;
+font-size:16px;
+padding: 8px;
+border-radius: 5px;
+border: 1px solid #ccc;
+box-shadow: none;
+width: 100%;
+margin-top: 5px;
+margin-bottom: 10px;
+}
+    
+    button {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F0C0C0;
+    color: #1c000a;
+    font-size: 16px;
+    cursor: pointer;
+    }
+    
+    button:hover {
+        color: #F0C0C0;
+    background-color: #1c000a;
+    }
