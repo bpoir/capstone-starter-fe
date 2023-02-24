@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './addUpdateDelete.css';
 //import { ResponsiveEmbed } from 'react-bootstrap';
 
+
 function AddUpdateDeleteProducts() {
   const [productName, setProductName] = useState('');
   const [productType, setType] = useState('');
